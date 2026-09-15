@@ -25,6 +25,15 @@ export function Footer() {
           </div>
 
           <div>
+            <h4 className="text-sm font-semibold text-white">Company</h4>
+            <ul className="mt-4 space-y-3 text-sm text-slate-400">
+              <li><Link href="/about" className="hover:text-white">About</Link></li>
+              <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
+              <li><Link href="#features" className="hover:text-white">Features</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="text-sm font-semibold text-white">Legal</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
@@ -35,7 +44,18 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} PagePilot. All rights reserved.
+          <p>
+            © {new Date().getFullYear()} PagePilot. All rights reserved.
+          </p>
+          <p className="mt-2">
+            Built by{" "}
+            <Link
+              href="/about"
+              className="font-medium text-slate-400 transition-colors hover:text-indigo-400"
+            >
+              Abdul Rehman Raza
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

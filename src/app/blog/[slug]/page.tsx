@@ -62,7 +62,12 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       "@type": "Person",
       name: "Abdul Rehman Raza",
-      url: "https://www.linkedin.com/in/abdul-rehman-raza-7a125b332",
+      url: `${siteUrl}/about`,
+      sameAs: [
+        "https://github.com/AbdulRehmanRaza03",
+        "https://www.linkedin.com/in/abdul-rehman-raza-7a125b332",
+        "https://abdulrehmanraza03.github.io/My-Portfolio/",
+      ],
     },
     publisher: {
       "@type": "Organization",
@@ -140,6 +145,47 @@ export default async function BlogPostPage({ params }: Props) {
           >
             Get started free
           </Link>
+        </div>
+
+        {/* Author bio */}
+        <div className="mt-8 flex flex-col items-center gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:flex-row sm:items-start">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 text-xl font-bold text-white">
+            AR
+          </div>
+          <div className="text-center sm:text-left">
+            <p className="text-sm font-semibold text-white">
+              Abdul Rehman Raza
+            </p>
+            <p className="mt-1 text-xs text-slate-400">
+              Founder of PagePilot · Data Scientist & AI Engineer
+            </p>
+            <div className="mt-3 flex flex-wrap justify-center gap-4 sm:justify-start">
+              <a
+                href="https://github.com/AbdulRehmanRaza03"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium text-indigo-400 transition-colors hover:text-indigo-300"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/abdul-rehman-raza-7a125b332"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium text-indigo-400 transition-colors hover:text-indigo-300"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://abdulrehmanraza03.github.io/My-Portfolio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium text-indigo-400 transition-colors hover:text-indigo-300"
+              >
+                Portfolio
+              </a>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
