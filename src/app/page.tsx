@@ -7,12 +7,16 @@ import { Features } from "@/components/features";
 import { HowItWorks } from "@/components/how-it-works";
 import { Pricing } from "@/components/pricing";
 import { Testimonials } from "@/components/testimonials";
+import { VideoDemo } from "@/components/video-demo";
 import { CTA } from "@/components/cta";
+import { EmailCapture } from "@/components/email-capture";
 import { FAQ } from "@/components/faq";
+import { BlogSection } from "@/components/blog-section";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { CursorGlow } from "@/components/cursor-glow";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { SocialProof } from "@/components/social-proof";
 
 export default function Home() {
   return (
@@ -29,11 +33,15 @@ export default function Home() {
         <HowItWorks />
         <Pricing />
         <Testimonials />
+        <VideoDemo />
         <CTA />
+        <EmailCapture />
         <FAQ />
+        <BlogSection />
       </main>
       <Footer />
       <WhatsAppButton />
+      <SocialProof />
     </>
   );
 }
