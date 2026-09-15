@@ -4,20 +4,6 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// Inline script to set the theme before hydration, avoiding a flash
-// of incorrect theme (FOUC).
-const themeInitScript = `
-  (function () {
-    try {
-      var stored = localStorage.getItem("theme");
-      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (stored === "dark" || (!stored && prefersDark)) {
-        document.documentElement.classList.add("dark");
-      }
-    } catch (e) {}
-  })();
-`;
-
 export const metadata: Metadata = {
   title: "PagePilot — AI-powered Facebook Page automation",
   description:
@@ -43,10 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
+    <html lang="en">
       <body
         className={`${inter.className} bg-slate-950 text-slate-100 antialiased`}
       >

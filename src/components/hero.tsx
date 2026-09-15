@@ -107,13 +107,10 @@ export function Hero() {
                   <div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900 p-3">
                     <div>
                       <p className="text-xs font-semibold text-slate-300">
-                        Conversations today
+                        Unified inbox
                       </p>
                       <p className="text-2xl font-bold text-white">
-                        1,284{" "}
-                        <span className="align-middle text-xs font-medium text-emerald-400">
-                          ↑ 24%
-                        </span>
+                        All pages, one place
                       </p>
                     </div>
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">

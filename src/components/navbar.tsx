@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./theme-toggle";
 
 const links = [
   { href: "#features", label: "Features" },
@@ -58,7 +57,6 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <ThemeToggle />
           <Link
             href="https://page-pilot-ai-theta.vercel.app/login"
             className="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 hover:bg-slate-800"
@@ -74,7 +72,6 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
           <button
             className="rounded-lg p-2 text-slate-300 hover:bg-slate-800 md:hidden"
             onClick={() => setOpen(!open)}

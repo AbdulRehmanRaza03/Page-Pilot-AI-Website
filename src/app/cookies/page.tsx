@@ -1,7 +1,8 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Cookie Policy — PagePilot",
 };
 
