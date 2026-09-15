@@ -45,14 +45,16 @@ const testimonials = [
 
 export function Testimonials() {
   const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (paused) return;
     const timer = setInterval(() => {
       setIndex((i) => (i + 1) % testimonials.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [paused]);
 
   function prev() {
     setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
@@ -80,7 +82,11 @@ export function Testimonials() {
         </Reveal>
 
         <Reveal delay={150} className="mt-12">
-          <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/60 p-8 sm:p-12">
+          <div
+            className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/60 p-8 sm:p-12"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
             <Quote className="absolute -right-2 -top-2 h-24 w-24 text-slate-800" />
 
             <div className="animate-testimonial relative" key={index}>

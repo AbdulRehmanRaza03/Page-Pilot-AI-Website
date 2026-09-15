@@ -18,6 +18,7 @@ import { ScrollProgress } from "@/components/scroll-progress";
 import { CursorGlow } from "@/components/cursor-glow";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { SocialProof } from "@/components/social-proof";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
       <Footer />
       <WhatsAppButton />
       <SocialProof />
+      <ScrollToTop />
     </>
   );
 }

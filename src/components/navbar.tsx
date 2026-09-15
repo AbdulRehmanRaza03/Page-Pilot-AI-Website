@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
@@ -38,6 +38,30 @@ export function Logo() {
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string>("");
+
+  // Track which section is currently in view to highlight its nav link.
+  useEffect(() => {
+    const sections = links
+      .map((l) => document.querySelector(l.href))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
@@ -45,15 +69,22 @@ export function Navbar() {
         <Logo />
 
         <nav className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const isActive = active === l.href;
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`text-sm font-medium transition-colors ${
+                  isActive
+                    ? "text-white"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
