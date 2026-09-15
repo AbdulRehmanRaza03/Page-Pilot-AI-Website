@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://pagepilot-website.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://page-pilot-ai-website.vercel.app";
 
 const title = "PagePilot — AI-powered Facebook Page automation";
 const description =
