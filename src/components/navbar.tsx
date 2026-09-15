@@ -14,16 +14,13 @@ const links = [
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
-      <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/40 transition-transform duration-300 hover:scale-110 hover:rotate-3">
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 opacity-60 blur-[3px]" />
-        <svg
-          viewBox="0 0 24 24"
-          className="relative h-5 w-5 text-white drop-shadow"
-          fill="currentColor"
-        >
-          <path d="M12 2 L20 12 L10 20 Z" />
-        </svg>
-      </div>
+      <img
+        src="/logo.png"
+        alt="PagePilot logo"
+        width={36}
+        height={36}
+        className="h-9 w-9 rounded-lg object-contain"
+      />
       <div className="leading-tight">
         <span className="block text-lg font-bold text-white">
           PagePilot
