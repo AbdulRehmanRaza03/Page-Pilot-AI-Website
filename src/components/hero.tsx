@@ -43,7 +43,7 @@ export function Hero() {
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
-            href="/register"
+            href="https://page-pilot-ai-theta.vercel.app/login"
             className="shine group inline-flex items-center gap-2 rounded-xl bg-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-3d transition-all hover:bg-brand-700 hover:-translate-y-0.5 hover:shadow-glow"
           >
             Get started free

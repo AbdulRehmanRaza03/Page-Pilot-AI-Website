@@ -56,13 +56,13 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <Link
-            href="/login"
+            href="https://page-pilot-ai-theta.vercel.app/login"
             className="rounded-lg px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
           >
             Sign in
           </Link>
           <Link
-            href="/register"
+            href="https://page-pilot-ai-theta.vercel.app/login"
             className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-700"
           >
             Get started free
@@ -92,7 +92,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="/register"
+              href="https://page-pilot-ai-theta.vercel.app/login"
               className="mt-2 rounded-lg bg-brand-600 px-4 py-2 text-center text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >

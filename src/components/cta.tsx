@@ -27,7 +27,7 @@ export function CTA() {
           Join thousands of businesses running their Facebook pages on autopilot.
         </p>
         <Link
-          href="/register"
+          href="https://page-pilot-ai-theta.vercel.app/login"
           className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-indigo-700 shadow-3d-lg transition-all hover:-translate-y-1 hover:bg-indigo-50 hover:shadow-glow"
         >
           Get started free

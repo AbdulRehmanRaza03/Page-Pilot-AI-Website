@@ -110,7 +110,7 @@ export function Pricing() {
               </ul>
 
               <Link
-                href="/register"
+                href="https://page-pilot-ai-theta.vercel.app/login"
                 className={`mt-8 block rounded-xl px-4 py-3 text-center text-sm font-semibold transition-all ${
                   plan.featured
                     ? "shine bg-brand-600 text-white hover:bg-brand-700 hover:-translate-y-0.5 hover:shadow-glow"
