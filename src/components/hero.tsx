@@ -12,6 +12,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { TiltCard } from "./tilt-card";
+import { RotatingWord } from "./rotating-word";
 
 export function Hero() {
   return (
@@ -32,7 +33,7 @@ export function Hero() {
 
         <h1 className="mx-auto max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-6xl">
           Turn every Facebook conversation into{" "}
-          <span className="gradient-text-animated">growth</span>
+          <RotatingWord />
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
