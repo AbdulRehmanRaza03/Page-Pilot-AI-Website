@@ -9,6 +9,7 @@ import {
   Zap,
 } from "lucide-react";
 import { TiltCard } from "./tilt-card";
+import { Reveal } from "./reveal";
 
 const features = [
   {
@@ -64,7 +65,7 @@ const features = [
 export function Features() {
   return (
     <section id="features" className="mx-auto max-w-7xl px-6 py-24">
-      <div className="text-center">
+      <Reveal className="text-center">
         <span className="inline-block rounded-full bg-indigo-50 px-4 py-1 text-sm font-medium text-brand-600">
           Features
         </span>
@@ -75,25 +76,27 @@ export function Features() {
           One platform that replaces the messy mix of inboxes, spreadsheets,
           and manual follow-ups.
         </p>
-      </div>
+      </Reveal>
 
       <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {features.map((f) => (
-          <TiltCard key={f.title} maxTilt={10} className="h-full">
-            <div className="group h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow duration-300 hover:border-indigo-200 hover:shadow-3d">
-              <div
-                className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${f.accent} text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}
-              >
-                <f.icon className="h-5 w-5" />
+        {features.map((f, i) => (
+          <Reveal key={f.title} delay={(i % 4) * 80} className="h-full">
+            <TiltCard maxTilt={10} className="h-full">
+              <div className="group h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow duration-300 hover:border-indigo-200 hover:shadow-3d">
+                <div
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${f.accent} text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}
+                >
+                  <f.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 text-base font-semibold text-navy">
+                  {f.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                  {f.desc}
+                </p>
               </div>
-              <h3 className="mt-4 text-base font-semibold text-navy">
-                {f.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-500">
-                {f.desc}
-              </p>
-            </div>
-          </TiltCard>
+            </TiltCard>
+          </Reveal>
         ))}
       </div>
     </section>

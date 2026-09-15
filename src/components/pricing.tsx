@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Check, Sparkles } from "lucide-react";
 import { TiltCard } from "./tilt-card";
+import { Reveal } from "./reveal";
 
 const plans = [
   {
@@ -57,7 +58,7 @@ const plans = [
 export function Pricing() {
   return (
     <section id="pricing" className="mx-auto max-w-7xl px-6 py-24">
-      <div className="text-center">
+      <Reveal className="text-center">
         <span className="inline-block rounded-full bg-indigo-50 px-4 py-1 text-sm font-medium text-brand-600">
           Pricing
         </span>
@@ -67,7 +68,7 @@ export function Pricing() {
         <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
           Start free, upgrade when you grow. No hidden fees.
         </p>
-      </div>
+      </Reveal>
 
       <div className="mt-16 grid gap-8 lg:grid-cols-3">
         {plans.map((plan, i) => {
@@ -122,14 +123,16 @@ export function Pricing() {
             </div>
           );
 
-          return plan.featured ? (
-            <TiltCard key={plan.name} maxTilt={4} className="h-full">
-              {card}
-            </TiltCard>
-          ) : (
-            <div key={plan.name} className="h-full">
-              {card}
-            </div>
+          return (
+            <Reveal key={plan.name} delay={i * 120} className="h-full">
+              {plan.featured ? (
+                <TiltCard maxTilt={4} className="h-full">
+                  {card}
+                </TiltCard>
+              ) : (
+                <div className="h-full">{card}</div>
+              )}
+            </Reveal>
           );
         })}
       </div>

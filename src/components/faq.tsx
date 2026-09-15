@@ -33,30 +33,54 @@ export function FAQ() {
     <section id="faq" className="bg-slate-50 py-24">
       <div className="mx-auto max-w-3xl px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-navy">
+          <span className="inline-block rounded-full bg-white px-4 py-1 text-sm font-medium text-brand-600 shadow-sm">
+            FAQ
+          </span>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-navy">
             Frequently asked questions
           </h2>
         </div>
 
         <div className="mt-12 space-y-4">
-          {faqs.map((f, i) => (
-            <div key={i} className="rounded-xl border border-slate-200 bg-white">
-              <button
-                className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left"
-                onClick={() => setOpen(open === i ? null : i)}
+          {faqs.map((f, i) => {
+            const isOpen = open === i;
+            return (
+              <div
+                key={i}
+                className={`overflow-hidden rounded-xl border bg-white transition-colors ${
+                  isOpen ? "border-indigo-200" : "border-slate-200"
+                }`}
               >
-                <span className="font-medium text-navy">{f.q}</span>
-                <ChevronDown
-                  className={`h-5 w-5 shrink-0 text-slate-400 transition-transform ${
-                    open === i ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {open === i && (
-                <p className="px-6 pb-5 text-sm leading-relaxed text-slate-600">{f.a}</p>
-              )}
-            </div>
-          ))}
+                <button
+                  className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left"
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${i}`}
+                >
+                  <span className="font-medium text-navy">{f.q}</span>
+                  <ChevronDown
+                    className={`h-5 w-5 shrink-0 text-slate-400 transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                <div
+                  id={`faq-panel-${i}`}
+                  className="grid transition-all duration-300 ease-in-out"
+                  style={{
+                    gridTemplateRows: isOpen ? "1fr" : "0fr",
+                    opacity: isOpen ? 1 : 0,
+                  }}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-6 pb-5 text-sm leading-relaxed text-slate-600">
+                      {f.a}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
