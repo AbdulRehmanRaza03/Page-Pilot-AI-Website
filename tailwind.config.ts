@@ -30,16 +30,11 @@ const config: Config = {
         "pulse-glow": "pulseGlow 3s ease-in-out infinite",
         shine: "shine 2.5s linear infinite",
         "float-slow": "floatSlow 9s ease-in-out infinite",
-        "spin-slow": "spinSlow 22s linear infinite",
       },
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-16px)" },
-        },
-        spinSlow: {
-          from: { transform: "rotateY(0deg)" },
-          to: { transform: "rotateY(360deg)" },
         },
         floatSlow: {
           "0%, 100%": { transform: "translateY(0) rotate(0deg)" },

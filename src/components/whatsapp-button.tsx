@@ -7,8 +7,8 @@ const phone = "+92 318 1678758";
 const waLink = "https://wa.me/923181678758";
 
 /**
- * Floating WhatsApp chat support button with a premium, animated feel.
- * Shows a small popover with the support phone number on hover/click.
+ * Floating WhatsApp chat support button with a premium feel.
+ * Shows a popover with the support phone number on click.
  */
 export function WhatsAppButton() {
   const [open, setOpen] = useState(false);
@@ -16,14 +16,14 @@ export function WhatsAppButton() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {open && (
-        <div className="animate-testimonial w-72 rounded-2xl border border-slate-200 bg-white p-4 shadow-3d">
+        <div className="animate-testimonial w-72 rounded-2xl border border-slate-800 bg-slate-900 p-4 shadow-3d">
           <div className="flex items-start gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
               <WhatsAppIcon className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-navy">Chat with us</p>
-              <p className="mt-0.5 text-xs text-slate-500">
+              <p className="text-sm font-semibold text-white">Chat with us</p>
+              <p className="mt-0.5 text-xs text-slate-400">
                 We usually reply within a few minutes.
               </p>
             </div>
@@ -32,7 +32,7 @@ export function WhatsAppButton() {
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 block rounded-xl bg-[#25D366] px-4 py-2.5 text-center text-sm font-semibold text-white transition-all hover:bg-[#1ebe5b] hover:shadow-glow"
+            className="mt-3 block rounded-xl bg-[#25D366] px-4 py-2.5 text-center text-sm font-semibold text-white transition-all hover:bg-[#1ebe5b]"
           >
             {phone}
           </a>
@@ -42,12 +42,11 @@ export function WhatsAppButton() {
       <button
         onClick={() => setOpen((o) => !o)}
         aria-label="Chat on WhatsApp"
-        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-3d-lg transition-all hover:scale-110 hover:shadow-glow"
+        aria-expanded={open}
+        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-3d-lg transition-transform hover:scale-110"
       >
-        {/* pulse ring */}
-        <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-[#25D366] opacity-30" />
         <WhatsAppIcon className="h-7 w-7 transition-transform group-hover:rotate-6" />
-        <span className="absolute -right-0.5 -top-0.5 h-4 w-4 rounded-full border-2 border-white bg-emerald-500" />
+        <span className="absolute -right-0.5 -top-0.5 h-4 w-4 rounded-full border-2 border-slate-950 bg-emerald-400" />
       </button>
     </div>
   );

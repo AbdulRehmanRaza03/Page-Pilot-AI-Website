@@ -63,10 +63,9 @@ export function Hero() {
 
         {/* 3D dashboard mockup */}
         <div className="perspective-2000 mx-auto mt-20 max-w-5xl">
-          <div className="[transform-style:preserve-3d] animate-spin-slow" aria-hidden>
-            <TiltCard maxTilt={6} className="rounded-3xl">
-              <div className="card-3d relative rounded-3xl border border-slate-800 bg-slate-900/90 p-2 shadow-3d-lg backdrop-blur">
-                <div className="absolute -inset-1 -z-10 rounded-[2rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-25 blur-2xl" />
+          <TiltCard maxTilt={6} className="rounded-3xl">
+            <div className="card-3d relative rounded-3xl border border-slate-800 bg-slate-900/90 p-2 shadow-3d-lg backdrop-blur">
+              <div className="absolute -inset-1 -z-10 rounded-[2rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-25 blur-2xl" />
 
               {/* Mock window chrome */}
               <div className="flex items-center gap-2 rounded-2xl bg-slate-800/60 px-4 py-3">
@@ -155,7 +154,6 @@ export function Hero() {
               </div>
             </div>
           </TiltCard>
-          </div>
         </div>
 
         {/* Feature floating cards */}
