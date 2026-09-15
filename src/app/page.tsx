@@ -12,6 +12,7 @@ import { CTA } from "@/components/cta";
 import { EmailCapture } from "@/components/email-capture";
 import { FAQ } from "@/components/faq";
 import { BlogSection } from "@/components/blog-section";
+import { About } from "@/components/about";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { CursorGlow } from "@/components/cursor-glow";
@@ -38,6 +39,7 @@ export default function Home() {
         <EmailCapture />
         <FAQ />
         <BlogSection />
+        <About />
       </main>
       <Footer />
       <WhatsAppButton />

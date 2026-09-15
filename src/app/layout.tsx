@@ -107,6 +107,22 @@ const jsonLd = {
       url: siteUrl,
       name: "PagePilot",
     },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#founder`,
+      name: "Abdul Rehman Raza",
+      jobTitle: "Founder, Data Scientist & AI Engineer",
+      url: siteUrl,
+      sameAs: [
+        "https://github.com/AbdulRehmanRaza03",
+        "https://www.linkedin.com/in/abdul-rehman-raza-7a125b332",
+        "https://abdulrehmanraza03.github.io/My-Portfolio/",
+      ],
+      worksFor: {
+        "@type": "Organization",
+        name: "PagePilot",
+      },
+    },
   ],
 };
 
