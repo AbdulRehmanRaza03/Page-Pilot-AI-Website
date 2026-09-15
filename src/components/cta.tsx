@@ -24,7 +24,7 @@ export function CTA() {
           Ready to turn conversations into customers?
         </h2>
         <p className="mt-4 text-lg text-indigo-100">
-          Join thousands of businesses running their Facebook pages on autopilot.
+          Start automating your Facebook pages today — no credit card required.
         </p>
         <Link
           href="https://page-pilot-ai-theta.vercel.app/login"

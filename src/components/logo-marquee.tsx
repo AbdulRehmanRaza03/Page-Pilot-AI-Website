@@ -22,7 +22,7 @@ export function LogoMarquee() {
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="text-center">
           <p className="text-sm font-medium uppercase tracking-wider text-slate-400">
-            Trusted by 500+ growing businesses
+            Built for modern Facebook teams
           </p>
         </Reveal>
 
