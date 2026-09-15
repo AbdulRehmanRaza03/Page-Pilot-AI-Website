@@ -208,7 +208,8 @@
   .animate-float,
   .animate-float-slow,
   .animate-pulse-glow,
-  .gradient-text-animated {
+  .gradient-text-animated,
+  .aurora {
     animation: none !important;
   }
   .reveal {
@@ -216,4 +217,30 @@
     transform: none;
     transition: none;
   }
+}
+
+/* Aurora animated background */
+@keyframes auroraShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.aurora {
+  background: linear-gradient(
+    120deg,
+    rgba(59, 130, 246, 0.35),
+    rgba(99, 102, 241, 0.35),
+    rgba(168, 85, 247, 0.35),
+    rgba(99, 102, 241, 0.35),
+    rgba(59, 130, 246, 0.35)
+  );
+  background-size: 300% 300%;
+  animation: auroraShift 14s ease infinite;
+  filter: blur(60px);
 }

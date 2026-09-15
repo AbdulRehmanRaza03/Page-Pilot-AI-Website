@@ -16,9 +16,10 @@ import { TiltCard } from "./tilt-card";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-indigo-50/60 via-white to-white">
-      {/* Animated gradient mesh + blobs */}
+      {/* Animated gradient mesh + Aurora + blobs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="gradient-mesh absolute inset-0 opacity-70" />
+        <div className="aurora absolute -inset-x-20 top-0 h-[500px] opacity-40" />
         <div className="absolute -left-32 top-16 h-96 w-96 rounded-full bg-blue-200/40 blur-3xl animate-blob" />
         <div className="absolute -right-24 top-32 h-80 w-80 rounded-full bg-purple-200/40 blur-3xl animate-blob [animation-delay:2s]" />
         <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-indigo-200/30 blur-3xl animate-blob [animation-delay:4s]" />
@@ -63,9 +64,10 @@ export function Hero() {
 
         {/* 3D dashboard mockup */}
         <div className="perspective-2000 mx-auto mt-20 max-w-5xl">
-          <TiltCard maxTilt={6} className="rounded-3xl">
-            <div className="card-3d relative rounded-3xl border border-slate-200 bg-white/90 p-2 shadow-3d-lg backdrop-blur">
-              <div className="absolute -inset-1 -z-10 rounded-[2rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-20 blur-2xl" />
+          <div className="[transform-style:preserve-3d] animate-spin-slow" aria-hidden>
+            <TiltCard maxTilt={6} className="rounded-3xl">
+              <div className="card-3d relative rounded-3xl border border-slate-200 bg-white/90 p-2 shadow-3d-lg backdrop-blur">
+                <div className="absolute -inset-1 -z-10 rounded-[2rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-20 blur-2xl" />
 
               {/* Mock window chrome */}
               <div className="flex items-center gap-2 rounded-2xl bg-slate-50 px-4 py-3">
@@ -157,6 +159,7 @@ export function Hero() {
               </div>
             </div>
           </TiltCard>
+          </div>
         </div>
 
         {/* Feature floating cards */}
