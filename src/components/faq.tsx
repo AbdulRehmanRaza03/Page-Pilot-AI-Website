@@ -30,13 +30,13 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-slate-50 py-24">
-      <div className="mx-auto max-w-3xl px-6">
+    <section id="faq" className="py-16 md:py-24">
+      <div className="mx-auto max-w-3xl px-4">
         <div className="text-center">
-          <span className="inline-block rounded-full bg-white px-4 py-1 text-sm font-medium text-brand-600 shadow-sm">
+          <span className="inline-block rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-300">
             FAQ
           </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-navy">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white">
             Frequently asked questions
           </h2>
         </div>
@@ -47,8 +47,8 @@ export function FAQ() {
             return (
               <div
                 key={i}
-                className={`overflow-hidden rounded-xl border bg-white transition-colors ${
-                  isOpen ? "border-indigo-200" : "border-slate-200"
+                className={`overflow-hidden rounded-xl border bg-slate-900/60 transition-colors ${
+                  isOpen ? "border-indigo-500/50" : "border-slate-800"
                 }`}
               >
                 <button
@@ -57,7 +57,7 @@ export function FAQ() {
                   aria-expanded={isOpen}
                   aria-controls={`faq-panel-${i}`}
                 >
-                  <span className="font-medium text-navy">{f.q}</span>
+                  <span className="font-medium text-white">{f.q}</span>
                   <ChevronDown
                     className={`h-5 w-5 shrink-0 text-slate-400 transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
@@ -73,7 +73,7 @@ export function FAQ() {
                   }}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-6 pb-5 text-sm leading-relaxed text-slate-600">
+                    <p className="px-6 pb-5 text-sm leading-relaxed text-slate-400">
                       {f.a}
                     </p>
                   </div>

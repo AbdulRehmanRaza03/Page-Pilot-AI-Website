@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/navbar";
+import { AnnouncementBar } from "@/components/announcement-bar";
 import { Hero } from "@/components/hero";
 import { LogoMarquee } from "@/components/logo-marquee";
 import { StatsSection } from "@/components/stats";
@@ -18,6 +19,7 @@ export default function Home() {
     <>
       <ScrollProgress />
       <CursorGlow />
+      <AnnouncementBar />
       <Navbar />
       <main>
         <Hero />

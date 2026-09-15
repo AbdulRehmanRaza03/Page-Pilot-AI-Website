@@ -48,7 +48,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body
-        className={`${inter.className} bg-white text-navy antialiased dark:bg-slate-950 dark:text-slate-100`}
+        className={`${inter.className} bg-slate-950 text-slate-100 antialiased`}
       >
         {children}
       </body>

@@ -26,10 +26,10 @@ export function Logo() {
         </svg>
       </div>
       <div className="leading-tight">
-        <span className="block text-lg font-bold text-navy dark:text-white">
+        <span className="block text-lg font-bold text-white">
           PagePilot
         </span>
-        <span className="block text-[10px] font-medium text-slate-400 dark:text-slate-500">
+        <span className="block text-[10px] font-medium text-slate-400">
           Connect • Engage • Grow
         </span>
       </div>
@@ -41,7 +41,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="glass sticky top-0 z-50 border-b border-slate-200/60 dark:border-slate-800/60 dark:bg-slate-900/80">
+    <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Logo />
 
@@ -50,7 +50,7 @@ export function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-navy dark:text-slate-300 dark:hover:text-white"
+              className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
             >
               {l.label}
             </Link>
@@ -61,13 +61,13 @@ export function Navbar() {
           <ThemeToggle />
           <Link
             href="https://page-pilot-ai-theta.vercel.app/login"
-            className="rounded-lg px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 hover:bg-slate-800"
           >
             Sign in
           </Link>
           <Link
             href="https://page-pilot-ai-theta.vercel.app/login"
-            className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-700"
+            className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-500"
           >
             Get started free
           </Link>
@@ -76,7 +76,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <button
-            className="rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 md:hidden"
+            className="rounded-lg p-2 text-slate-300 hover:bg-slate-800 md:hidden"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
             aria-expanded={open}
@@ -87,13 +87,13 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-slate-200 bg-white px-6 py-4 dark:border-slate-800 dark:bg-slate-900 md:hidden">
+        <div className="border-t border-slate-800 bg-slate-950 px-6 py-4 md:hidden">
           <nav className="flex flex-col gap-3">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-slate-700 dark:text-slate-300"
+                className="text-sm font-medium text-slate-300"
                 onClick={() => setOpen(false)}
               >
                 {l.label}
@@ -101,7 +101,7 @@ export function Navbar() {
             ))}
             <Link
               href="https://page-pilot-ai-theta.vercel.app/login"
-              className="mt-2 rounded-lg bg-brand-600 px-4 py-2 text-center text-sm font-semibold text-white"
+              className="mt-2 rounded-lg bg-indigo-600 px-4 py-2 text-center text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >
               Get started free

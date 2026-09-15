@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 py-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 py-16 md:py-24">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-white/10 blur-3xl animate-blob" />
         <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-white/10 blur-3xl animate-blob [animation-delay:3s]" />
