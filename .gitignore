@@ -10,3 +10,5 @@ dist/
 .DS_Store
 # Original logo source file (served from public/logo.png)
 page pilot logo.png
+# Raw screenshot source (served as public/dashboard.webp)
+Capture.PNG
