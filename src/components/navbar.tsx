@@ -15,7 +15,7 @@ export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
       <img
-        src="/logo.png"
+        src="/logo-512.png"
         alt="PagePilot logo"
         width={36}
         height={36}
